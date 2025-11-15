@@ -1,0 +1,60 @@
+name: 📝 Test Case Task
+description: Task related to writing, updating, or reviewing test cases
+title: "[Test Case]: "
+labels: ["test-case"]
+assignees: []
+
+body:
+  - type: input
+    id: module
+    attributes:
+      label: 📂 Module / Feature
+      placeholder: "Example: Login / Cart / Checkout"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: ✏️ Action type
+      options:
+        - Create new test cases
+        - Update existing test cases
+        - Review & refactor test cases
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Task description
+      placeholder: "Describe what needs to be covered or updated in test cases…"
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: 🔗 Link to test cases
+      placeholder: "Link to file or folder in repository (if applicable)"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📌 Priority
+      options:
+        - priority: high
+        - priority: medium
+        - priority: low
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 📎 Additional notes
+      placeholder: "Any special scenarios, edge cases, or constraints…"
+    validations:
+      required: false
