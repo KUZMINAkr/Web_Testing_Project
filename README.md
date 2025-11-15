@@ -213,3 +213,52 @@ Aspiring QA Engineer / Future Backend Developer
 | **ID** | TC_API_006 |
 | **Title** | Delete book from user collection |
 | **Expected Result** | 204 No Content |
+
+## 🐞 Bug Tracking Table
+
+| Bug ID | Title | Severity | Priority | Status |
+|--------|--------|----------|----------|--------|
+| B001 | WebTables loads empty | High | High | Open |
+| B002 | Book details page is white screen | High | High | Open |
+| B003 | Radio button “No” not clickable | Medium | Medium | Open |
+| B004 | Slider moves incorrectly | Medium | Low | Open |
+| B005 | Grid numbers stick to cursor | Low | Low | Open |
+| B006 | List numbers stick to cursor | Low | Low | Open |
+| B007 | “More” button inactive | Medium | Low | Open |
+| B008 | Resizable box jumps / not smooth | Medium | Low | Open |
+
+## ✔ UI Testing Checklist
+
+### General UI
+- [x] Page loads correctly
+- [x] All text is readable
+- [x] No broken elements
+- [x] Buttons clickable
+- [x] Hover states visible
+
+### Interactive Elements
+- [x] Slider movement
+- [x] Resizable components
+- [x] Radio buttons
+- [x] List/Grid selection
+- [x] Menu navigation
+
+### BookStore UI
+- [x] Book list loads
+- [x] ISBN navigation works
+- [ ] Book details page loads correctly (❌ Bug found)
+
+# 📄 Additional QA Documentation
+
+This project also includes:
+
+### ✔ API Test Cases  
+Located in the README (section: Test Cases).
+
+### ✔ Bug Tracking Table  
+All bugs tracked with severity and priority.
+
+### ✔ UI Testing Checklist  
+Covers general UI, interactive elements, and BookStore functionality.
+
+Together, these documents demonstrate my ability to test APIs, analyze UI behavior, identify bugs, and structure QA work professionally.
