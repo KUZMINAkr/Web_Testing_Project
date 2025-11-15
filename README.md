@@ -98,9 +98,6 @@ Web_Testing_Project/
 ├── README.md
 └── other documentation files
 
-yaml
-Copy code
-
 ---
 
 # ✨ Additional QA Documentation
