@@ -1,0 +1,98 @@
+name: 🌐 Web Bug Report
+description: Report a bug found during web UI or functional testing
+title: "[Web Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌐 Web Bug Report
+        Please fill in the details below to ensure accurate bug reproduction.
+
+  - type: input
+    id: browser
+    attributes:
+      label: 🧭 Browser & Version
+      placeholder: "Example: Chrome 122 / Firefox 118 / Edge 120"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: 🖥 Operating System
+      placeholder: "Windows 11 / macOS Ventura / Ubuntu 22.04"
+    validations:
+      required: true
+
+  - type: textarea
+    id: url
+    attributes:
+      label: 🔗 URL or Page
+      placeholder: "https://example.com/login"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: ▶️ Steps to reproduce
+      description: Step-by-step actions to reproduce the issue
+      placeholder: |
+        1. Open the Login page
+        2. Enter invalid credentials
+        3. Click 'Login'
+        4. Observe error message
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Expected result
+      placeholder: "User sees a proper validation message…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ Actual result
+      placeholder: "Error message not displayed / UI broken / No reaction…"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 🔥 Severity
+      options:
+        - Blocker
+        - Critical
+        - Major
+        - Minor
+        - Trivial
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📌 Priority
+      options:
+        - priority: high
+        - priority: medium
+        - priority: low
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: 📎 Attachments
+      description: Screenshots, DOM dumps, console logs, network logs
+      placeholder: "Attach screenshots or paste links"
+    validations:
+      required: false
