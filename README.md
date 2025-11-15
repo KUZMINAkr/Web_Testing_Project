@@ -16,7 +16,7 @@ The project includes:
 
 ✔ Clean and professional reporting
 
-📁 Project Structure
+Project Structure
 Web_Testing_Project/
 │
 ├── README.md                     ← Main documentation (this file)
@@ -26,6 +26,7 @@ Web_Testing_Project/
 │
 └── screenshots-bugs/             ← UI bug screenshots
         └── readme.md             ← Bug descriptions
+
 
 🔵 1. API Testing Overview
 
