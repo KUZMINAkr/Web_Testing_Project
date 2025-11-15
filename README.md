@@ -1,264 +1,161 @@
-🌐 Web & API Testing Project — DemoQA
+# Web & API Testing Project  
+A complete QA portfolio project demonstrating manual UI testing, API testing, bug reporting, and technical documentation skills.
 
-By Karina Kuzmina
+---
 
-This project demonstrates manual API testing, UI functional testing, and bug reporting skills using DemoQA’s BookStore API and UI components.
+## 📌 Project Overview  
+This project includes UI testing of **demoqa.com** and API testing of the **BookStore API**.  
+It demonstrates my ability to:
 
-The project includes:
+- Analyze API behavior  
+- Detect UI defects  
+- Write structured test cases  
+- Create clear bug reports  
+- Organize documentation professionally  
 
-✔ API testing (user creation, authorization, book operations)
+---
 
-✔ UI exploratory testing
+# 🧪 API Testing — BookStore API
 
-✔ Full bug documentation with screenshots
+All API tests were executed using **Postman** and manual exploration.
 
-✔ Organized folder structure
+## ✔ 1. User Registration  
+**Endpoint:** `POST /Account/v1/User`  
+**Checks performed:**  
+- User creation with valid data  
+- Validation error when password does not meet requirements  
+- Server response time & structure  
 
-✔ Clean and professional reporting
+---
 
-Project Structure
-Web_Testing_Project/
-│
-├── README.md                     ← Main documentation (this file)
-│
-├── screenshots/                  ← API screenshots
-│       └── readme.md             ← API screenshot index
-│
-└── screenshots-bugs/             ← UI bug screenshots
-        └── readme.md             ← Bug descriptions
+## ✔ 2. Authorization & Token  
+**Endpoint:** `POST /Account/v1/GenerateToken`  
+**Checks:**  
+- Token generated successfully with valid credentials  
+- Token status becomes `"Authorized"`  
 
+---
 
-🔵 1. API Testing Overview
+## ✔ 3. Get User Data  
+**Endpoint:** `GET /Account/v1/User/{UUID}`  
+**Checks:**  
+- Correct user information returned  
+- Unauthorized access blocked  
 
-API under test: DemoQA BookStore API
-https://demoqa.com/swagger/#/BookStore
+---
 
-Tested endpoints:
+## ✔ 4. Books — CRUD Testing  
+### Add Book  
+`POST /BookStore/v1/Books`  
+### Get Book  
+`GET /BookStore/v1/Book`  
+### Delete Book  
+`DELETE /BookStore/v1/Book`  
 
-POST /Account/v1/User – create user
+Checks include:  
+- Valid ISBN handling  
+- Error messages for invalid or missing ISBN  
+- Successful book deletion  
 
-POST /Account/v1/GenerateToken – generate token
+---
 
-POST /Account/v1/Authorized – verify authorization
+# 🖼 Screenshots  
+Screenshots for API tests are stored in:  
+📁 `./screenshots`
 
-GET /BookStore/v1/Books – get all books
+---
 
-GET /BookStore/v1/Book – get book by ISBN
+# 🐞 Bug Reports (UI)  
+All UI defects found on **demoqa.com** are located in:  
+📁 `./bug_reports`
 
-POST /BookStore/v1/Books – add books to collection
+Each bug includes:  
+- Title  
+- Environment  
+- Steps to reproduce  
+- Expected result  
+- Actual result  
+- Severity & priority  
+- Screenshot
 
-DELETE /BookStore/v1/Book – delete book
+---
 
-DELETE /BookStore/v1/Books – delete all user books
+# 📋 Additional QA Documentation
 
-Negative tests: invalid password, invalid token, invalid ISBN
+Below is structured documentation for this project.
 
-📸 All API screenshots are here:
-➡ /screenshots
+---
 
-🔵 2. UI Testing Overview
+# ✔ Test Cases — BookStore API
 
-Performed exploratory UI testing on:
+### 1. Create User
 
-WebTables
+| Step | Input | Expected Result |
+|------|--------|----------------|
+| 1 | Send POST /Account/v1/User with valid data | 201 Created, userId returned |
+| 2 | Send POST with weak password | 400 Bad Request, validation message |
 
-Slider
+---
 
-Selectable (List/Grid)
+### 2. Token Generation
 
-Menu
+| Step | Input | Expected Result |
+|------|--------|----------------|
+| 1 | Valid username & password | Token generated, status = Authorized |
+| 2 | Invalid credentials | Token not issued |
 
-Radio Buttons
+---
 
-Resizable
+### 3. Book Operations
 
-Book Store Page
+| Case | Action | Expected |
+|------|--------|----------|
+| Add book | Send valid ISBN | 201 Created |
+| Invalid ISBN | Send wrong ISBN | 400 Bad Request |
+| Delete | Remove book by correct ISBN | 204 No Content |
 
-Found multiple reproducible visual and functional bugs.
+---
 
-📸 All bug screenshots with descriptions are here:
-➡ /screenshots-bugs
-
-🐞 3. Summary of Found UI Bugs
-
-Here are some examples (full list in /screenshots-bugs/readme.md):
-
-✔ Bug: WebTables loads empty
-
-The table displays no records.
-
-✔ Bug: Book page opens as white screen
-
-Clicking on a book leads to blank page.
-
-✔ Bug: “No” radio button not clickable
-
-Element is disabled.
-
-✔ Bug: Slider does not drag properly
-
-Moves one step only, shows forbidden icon.
-
-✔ Bug: Numbers in list/grid “stick” to cursor
-
-Visual glitch while selecting.
-
-✔ Bug: “More” button in Menu not working
-
-No dropdown activation.
-
-✔ Bug: Resizable box behaves inconsistently
-
-Jerky movement, not smooth.
-
-🧪 4. Skills Demonstrated
-✔ Manual API testing
-
-status codes
-
-positive & negative cases
-
-authorization
-
-JSON body validation
-
-✔ UI exploratory testing
-
-visual bugs
-
-interactive element testing
-
-usability issues
-
-✔ Bug reporting
-
-clear STR (steps to reproduce)
-
-expected vs actual result
-
-attached evidence
-
-✔ GitHub project structuring
-
-folder structure
-
-documentation
-
-commit history
-
-🏁 5. Final Notes
-
-This project demonstrates my ability to:
-
-analyze API behavior
-
-identify UI problems
-
-write clean bug reports
-
-document everything professionally
-
-organize QA work into a portfolio-ready project
-
-💛 Author
-
-Karina Kuzmina
-Aspiring QA Engineer / Future Backend Developer
-
-## ✔ Test Cases — BookStore API
-
-### Test Case 1 — Create User (Positive)
-| Field | Description |
-|-------|-------------|
-| **ID** | TC_API_001 |
-| **Title** | Create new user with valid data |
-| **Precondition** | No user with same username exists |
-| **Steps** | 1. Send POST /Account/v1/User with valid body |
-| **Expected Result** | 201 Created, userID returned |
-| **Status** | Passed |
-
-### Test Case 2 — Create User (Negative: weak password)
-| Field | Description |
-|-------|-------------|
-| **ID** | TC_API_002 |
-| **Title** | Create user with invalid password |
-| **Steps** | 1. Send POST with password "123" |
-| **Expected Result** | 400 Bad Request, password validation error |
-| **Status** | Passed |
-
-### Test Case 3 — Generate Token
-| Field | Description |
-|-------|-------------|
-| **ID** | TC_API_003 |
-| **Title** | Generate token with valid credentials |
-| **Expected Result** | 200 OK, token string generated |
-
-### Test Case 4 — Authorization Check
-| Field | Description |
-|-------|-------------|
-| **ID** | TC_API_004 |
-| **Title** | Check authorization with valid credentials |
-| **Expected Result** | true |
-
-### Test Case 5 — Add Book to Collection
-| Field | Description |
-|-------|-------------|
-| **ID** | TC_API_005 |
-| **Title** | Add book with valid ISBN |
-| **Expected Result** | 201 Created |
-
-### Test Case 6 — Delete Book
-| Field | Description |
-|-------|-------------|
-| **ID** | TC_API_006 |
-| **Title** | Delete book from user collection |
-| **Expected Result** | 204 No Content |
-
-## 🐞 Bug Tracking Table
+# 🐞 Bug Tracking Table
 
 | Bug ID | Title | Severity | Priority | Status |
 |--------|--------|----------|----------|--------|
-| B001 | WebTables loads empty | High | High | Open |
-| B002 | Book details page is white screen | High | High | Open |
-| B003 | Radio button “No” not clickable | Medium | Medium | Open |
-| B004 | Slider moves incorrectly | Medium | Low | Open |
-| B005 | Grid numbers stick to cursor | Low | Low | Open |
-| B006 | List numbers stick to cursor | Low | Low | Open |
-| B007 | “More” button inactive | Medium | Low | Open |
-| B008 | Resizable box jumps / not smooth | Medium | Low | Open |
+| 001 | WebTables not loading | High | High | Open |
+| 002 | Incorrect redirect on Books page | Medium | Medium | Open |
+| 003 | Radio button "Impressive" always selected | Low | Low | Open |
+| 004 | Sortable grid elements float incorrectly | Medium | Medium | Open |
+| 005 | Tabs content overflow | Low | Low | Open |
 
-## ✔ UI Testing Checklist
+---
 
-### General UI
-- [x] Page loads correctly
-- [x] All text is readable
-- [x] No broken elements
-- [x] Buttons clickable
-- [x] Hover states visible
+# 🎨 UI Testing Checklist
 
-### Interactive Elements
-- [x] Slider movement
-- [x] Resizable components
-- [x] Radio buttons
-- [x] List/Grid selection
-- [x] Menu navigation
+## ✓ General UI  
+- [x] Page loads correctly  
+- [x] All text is readable  
+- [x] No broken elements  
+- [x] Buttons clickable  
+- [x] Hover states visible  
 
-### BookStore UI
-- [x] Book list loads
-- [x] ISBN navigation works
-- [ ] Book details page loads correctly (❌ Bug found)
+## ✓ Interactive Elements  
+- [x] Slider movement  
+- [x] Sortable lists  
+- [x] Resizable boxes  
+- [x] Tabs content switches  
 
-# 📄 Additional QA Documentation
+---
 
-This project also includes:
+# 🧾 Final Notes  
+This project strengthened my ability to:
 
-### ✔ API Test Cases  
-Located in the README (section: Test Cases).
+- Test REST APIs  
+- Detect UI issues  
+- Document QA artifacts professionally  
+- Work with Postman  
+- Create a real portfolio-ready QA project  
 
-### ✔ Bug Tracking Table  
-All bugs tracked with severity and priority.
+---
 
-### ✔ UI Testing Checklist  
-Covers general UI, interactive elements, and BookStore functionality.
-
-Together, these documents demonstrate my ability to test APIs, analyze UI behavior, identify bugs, and structure QA work professionally.
+# 👩‍💻 Author  
+**Karina Kuzmina**  
+Aspiring QA Engineer | Future Backend Developer  
