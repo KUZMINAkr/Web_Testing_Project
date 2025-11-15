@@ -1,0 +1,92 @@
+name: 🐞 Universal Bug Report
+description: Report a bug found during testing (web, mobile, API, desktop)
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐞 Universal Bug Report
+        Please fill out all fields for clear and structured defect reporting.
+
+  - type: input
+    id: environment
+    attributes:
+      label: 🌐 Environment
+      description: Browser / OS / Device / App version / API environment
+      placeholder: "Example: Chrome 122 / Windows 11 / Build 1.0.5"
+    validations:
+      required: true
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: ⚙️ Preconditions
+      description: What must be true before the issue can be reproduced?
+      placeholder: "User logged in / Test account / VPN enabled / Specific dataset…"
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: ▶️ Steps to reproduce
+      description: Describe each step on a new line
+      placeholder: |
+        1. Go to...
+        2. Click...
+        3. Enter...
+        4. Observe the issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Expected result
+      placeholder: "System behaves correctly, user receives correct response…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: ❌ Actual result
+      placeholder: "Error appears, UI crashes, incorrect data returned…"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 🔥 Severity
+      options:
+        - Blocker
+        - Critical
+        - Major
+        - Minor
+        - Trivial
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📌 Priority
+      options:
+        - priority: high
+        - priority: medium
+        - priority: low
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: 📎 Attachments
+      description: Screenshots, videos, logs, request/response examples
+      placeholder: "Attach files or paste links here"
+    validations:
+      required: false
