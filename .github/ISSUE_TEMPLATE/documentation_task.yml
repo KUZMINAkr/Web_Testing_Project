@@ -1,0 +1,47 @@
+name: 📄 Documentation Task
+description: Task related to QA documentation (readme, guides, descriptions)
+title: "[Doc]: "
+labels: ["documentation"]
+assignees: []
+
+body:
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: 📂 Document type
+      options:
+        - Test Plan
+        - Checklist
+        - Test Cases Suite
+        - Bug Report Template
+        - Readme / Overview
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Task description
+      placeholder: "What needs to be created or updated?"
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: 🔗 Link to document (if exists)
+      placeholder: "Link to file or folder in repository"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📌 Priority
+      options:
+        - priority: high
+        - priority: medium
+        - priority: low
+    validations:
+      required: true
