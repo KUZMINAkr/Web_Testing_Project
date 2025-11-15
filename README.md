@@ -164,3 +164,52 @@ organize QA work into a portfolio-ready project
 
 Karina Kuzmina
 Aspiring QA Engineer / Future Backend Developer
+
+## ✔ Test Cases — BookStore API
+
+### Test Case 1 — Create User (Positive)
+| Field | Description |
+|-------|-------------|
+| **ID** | TC_API_001 |
+| **Title** | Create new user with valid data |
+| **Precondition** | No user with same username exists |
+| **Steps** | 1. Send POST /Account/v1/User with valid body |
+| **Expected Result** | 201 Created, userID returned |
+| **Status** | Passed |
+
+### Test Case 2 — Create User (Negative: weak password)
+| Field | Description |
+|-------|-------------|
+| **ID** | TC_API_002 |
+| **Title** | Create user with invalid password |
+| **Steps** | 1. Send POST with password "123" |
+| **Expected Result** | 400 Bad Request, password validation error |
+| **Status** | Passed |
+
+### Test Case 3 — Generate Token
+| Field | Description |
+|-------|-------------|
+| **ID** | TC_API_003 |
+| **Title** | Generate token with valid credentials |
+| **Expected Result** | 200 OK, token string generated |
+
+### Test Case 4 — Authorization Check
+| Field | Description |
+|-------|-------------|
+| **ID** | TC_API_004 |
+| **Title** | Check authorization with valid credentials |
+| **Expected Result** | true |
+
+### Test Case 5 — Add Book to Collection
+| Field | Description |
+|-------|-------------|
+| **ID** | TC_API_005 |
+| **Title** | Add book with valid ISBN |
+| **Expected Result** | 201 Created |
+
+### Test Case 6 — Delete Book
+| Field | Description |
+|-------|-------------|
+| **ID** | TC_API_006 |
+| **Title** | Delete book from user collection |
+| **Expected Result** | 204 No Content |
