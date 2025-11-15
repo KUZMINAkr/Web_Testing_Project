@@ -1,0 +1,52 @@
+name: 🧪 Test Plan Task
+description: Task related to creating or updating a test plan
+title: "[Test Plan]: "
+labels: ["test-plan"]
+assignees: []
+
+body:
+  - type: input
+    id: release
+    attributes:
+      label: 🚀 Release / Version
+      placeholder: "Example: Release 1.0 / Sprint 5"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: ✏️ Action type
+      options:
+        - Create new test plan
+        - Update existing test plan
+        - Review and refine test plan
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: 📌 Scope
+      placeholder: "What functionality or modules does this test plan cover?"
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: 📅 Deadline (optional)
+      placeholder: "YYYY-MM-DD"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📌 Priority
+      options:
+        - priority: high
+        - priority: medium
+        - priority: low
+    validations:
+      required: true
