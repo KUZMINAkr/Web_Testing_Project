@@ -1,0 +1,52 @@
+name: 📋 Checklist Task
+description: Task related to creating or updating a test checklist
+title: "[Checklist]: "
+labels: ["checklist"]
+assignees: []
+
+body:
+  - type: input
+    id: checklist_name
+    attributes:
+      label: 📋 Checklist name
+      placeholder: "Example: Smoke testing / Regression cycle 1 / Sanity for release 1.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: 📌 Scope
+      placeholder: "What should this checklist cover? Which modules or flows?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: ✏️ Action type
+      options:
+        - Create new checklist
+        - Update existing checklist
+        - Review and clean up checklist
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: 🔗 Link to checklist
+      placeholder: "Link to file in repository (if exists)"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📌 Priority
+      options:
+        - priority: high
+        - priority: medium
+        - priority: low
+    validations:
+      required: true
